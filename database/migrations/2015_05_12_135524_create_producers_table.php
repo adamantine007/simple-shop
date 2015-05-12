@@ -12,7 +12,18 @@ class CreateProducersTable extends Migration {
 	 */
 	public function up()
 	{
-		//
+        Schema::create('producers', function(Blueprint $table)
+        {
+            $table->increments('id');
+
+            $table->string('name');
+
+            $table->json('info');
+
+            $table->string('country');
+
+            $table->timestamps();
+        });
 	}
 
 	/**
@@ -22,7 +33,7 @@ class CreateProducersTable extends Migration {
 	 */
 	public function down()
 	{
-		//
+        Schema::drop('producers');
 	}
 
 }

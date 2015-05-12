@@ -12,7 +12,20 @@ class CreateSuppliesTable extends Migration {
 	 */
 	public function up()
 	{
-		//
+        Schema::create('supplies', function(Blueprint $table)
+        {
+            $table->increments('id');
+
+            $table->integer('supplier_id')->unsigned();
+            $table->integer('manager_id')->unsigned();
+
+            $table->integer('products_id')->unsigned();
+            $table->integer('amount')->unsigned();
+
+            $table->float('price');
+
+            $table->timestamps();
+        });
 	}
 
 	/**
@@ -22,7 +35,7 @@ class CreateSuppliesTable extends Migration {
 	 */
 	public function down()
 	{
-		//
+        Schema::drop('supplies');
 	}
 
 }

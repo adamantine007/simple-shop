@@ -12,7 +12,20 @@ class CreateProductsTable extends Migration {
 	 */
 	public function up()
 	{
-		//
+        Schema::create('products', function(Blueprint $table)
+        {
+            $table->increments('id');
+
+            $table->string('name');
+            $table->integer('producer_id')->unsigned();
+
+            $table->float('price');
+            $table->integer('amount')->unsigned();
+
+            $table->integer('suppliers_id')->unsigned();
+
+            $table->timestamps();
+        });
 	}
 
 	/**
@@ -22,7 +35,7 @@ class CreateProductsTable extends Migration {
 	 */
 	public function down()
 	{
-		//
+        Schema::drop('products');
 	}
 
 }
