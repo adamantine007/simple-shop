@@ -12,7 +12,22 @@ class CreateOrdersTable extends Migration {
 	 */
 	public function up()
 	{
-		//
+        Schema::create('orders', function(Blueprint $table)
+        {
+            $table->increments('id');
+
+            $table->integer('customer_id')->unsigned();
+            $table->json('products');
+
+            $table->string('address');
+            $table->date('delivery_date');
+
+            $table->tinyInteger('status_id')->unsigned();
+
+            $table->float('price');
+
+            $table->timestamps();
+        });
 	}
 
 	/**
@@ -22,7 +37,7 @@ class CreateOrdersTable extends Migration {
 	 */
 	public function down()
 	{
-		//
+        Schema::drop('orders');
 	}
 
 }
