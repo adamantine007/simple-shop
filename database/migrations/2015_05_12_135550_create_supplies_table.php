@@ -19,8 +19,10 @@ class CreateSuppliesTable extends Migration {
             $table->integer('supplier_id')->unsigned();
             $table->integer('manager_id')->unsigned();
 
-            $table->integer('products_id')->unsigned();
+            $table->integer('product_id')->unsigned();
             $table->integer('amount')->unsigned();
+
+            $table->tinyInteger('status_id');
 
             $table->float('price');
 

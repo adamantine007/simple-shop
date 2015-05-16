@@ -24,7 +24,7 @@ class CreateExecutedOrdersTable extends Migration {
 
             $table->tinyInteger('status_id')->unsigned();
             $table->integer('seller_id')->unsigned();
-            $table->integer('suppliers_id')->unsigned();
+            $table->json('suppliers');
 
             $table->float('price');
 

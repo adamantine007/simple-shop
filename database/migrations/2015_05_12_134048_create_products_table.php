@@ -22,7 +22,7 @@ class CreateProductsTable extends Migration {
             $table->float('price');
             $table->integer('amount')->unsigned();
 
-            $table->integer('suppliers_id')->unsigned();
+            $table->json('suppliers');
 
             $table->timestamps();
         });

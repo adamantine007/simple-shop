@@ -24,7 +24,7 @@ class CreateUsersTable extends Migration {
             $table->string('phone');
             $table->string('address');
 
-            $table->tinyInteger('status')->unsigned();
+            $table->tinyInteger('status_id')->unsigned();
 
 			$table->string('password', 60);
 			$table->rememberToken();

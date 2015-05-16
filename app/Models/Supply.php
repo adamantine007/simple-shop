@@ -2,14 +2,19 @@
 
 use Illuminate\Database\Eloquent\Model;
 
-class DeliveryOrder extends Model {
+class Supply extends Model {
 
-    protected $table = 'delivery_orders';
+    protected $table = 'supplies';
 
     protected $fillable = [
         'amount',
-        'status',
+        'price',
     ];
+
+    public function supplier()
+    {
+        return $this->belongsTo('App\Models\Supplier', 'id', 'supplier_id');
+    }
 
     public function manager()
     {
@@ -19,5 +24,10 @@ class DeliveryOrder extends Model {
     public function product()
     {
         return $this->belongsTo('App\Models\Product', 'id', 'product_id');
+    }
+
+    public function status()
+    {
+        return $this->belongsTo('App\Models\SupplyStatus');
     }
 }
