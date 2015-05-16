@@ -5,20 +5,41 @@
  * For full list see documentation.
  */
 
-Admin::model('App\User')->title('Users')->display(function ()
-{
-	$display = AdminDisplay::table();
-	$display->columns([
-		Column::string('name')->label('Name'),
-		Column::string('email')->label('Email'),
-	]);
-	return $display;
-})->createAndEdit(function ()
-{
-	$form = AdminForm::form();
-	$form->items([
-		FormItem::text('name', 'Name')->required(),
-		FormItem::text('email', 'Email')->required()->unique(),
-	]);
-	return $form;
-});
+use SleepingOwl\Admin\Admin;
+use SleepingOwl\Admin\Columns\Column;
+use SleepingOwl\Admin\Display\AdminDisplay;
+use SleepingOwl\Admin\Form\AdminForm;
+use SleepingOwl\Admin\FormItems\FormItem;
+
+Admin::model('App\Models\User')->title('Users')->display(function ()
+    {
+        $display = AdminDisplay::table();
+
+        $display->columns([
+            Column::string('name')->label('Name'),
+            Column::string('surname')->label('Surname'),
+            Column::string('middle_name')->label('Middle Name'),
+            Column::string('phone')->label('Phone'),
+            Column::string('address')->label('Address'),
+            Column::string('email')->label('Email'),
+            Column::string('status')->label('Status (position)'),
+        ]);
+
+        return $display;
+    })->createAndEdit(function ()
+        {
+            $form = AdminForm::form();
+
+            $form->items([
+                FormItem::text('name', 'Name')->required(),
+                FormItem::text('surname', 'Surname')->required(),
+                FormItem::text('middle_name', 'Middle Name')->required(),
+                FormItem::text('phone', 'Phone')->required(),
+                FormItem::text('address', 'Address')->required(),
+                FormItem::text('email', 'Email')->required()->unique(),
+                FormItem::text('status', 'Status (position)')->required(),
+                FormItem::text('password', 'Password')->required(),
+            ]);
+
+            return $form;
+        });
