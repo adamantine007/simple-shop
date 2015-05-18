@@ -146,6 +146,9 @@ return [
 		'App\Providers\RouteServiceProvider',
 
         'SleepingOwl\Admin\AdminServiceProvider',
+        'Illuminate\Html\HtmlServiceProvider',
+        'Laracasts\Flash\FlashServiceProvider',
+        'Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider',
 
 	],
 
@@ -204,6 +207,10 @@ return [
         'AdminForm'     => 'SleepingOwl\Admin\Form\AdminForm',
         'AdminTemplate' => 'SleepingOwl\Admin\Templates\Facade\AdminTemplate',
         'FormItem'      => 'SleepingOwl\Admin\FormItems\FormItem',
+
+        'Form'		=> 'Illuminate\Html\FormFacade',
+        'Html'		=> 'Illuminate\Html\HtmlFacade',
+        'Flash' 	=> 'Laracasts\Flash\Flash',
 
 	],
 
