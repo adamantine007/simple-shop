@@ -3,8 +3,9 @@
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
+use App\Http\Requests\UserRequest;
 use App\Models\User;
-use Illuminate\Http\Request;
+use App\Http\Requests\Request;
 
 class UserController extends Controller {
 
@@ -61,19 +62,22 @@ class UserController extends Controller {
      */
 	public function edit(User $user)
 	{
-
+        return view('users.edit', compact('user'));
 	}
 
     /**
      * Update the specified resource in storage.
      *
      * @param User $user
+     * @param UserRequest $request
      * @return Response
      * @internal param int $id
      */
-	public function update(User $user)
+	public function update(User $user, UserRequest $request)
 	{
+        $user->update($request->all());
 
+        return redirect('/users/' . $user->id);
 	}
 
     /**

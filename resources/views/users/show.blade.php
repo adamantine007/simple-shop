@@ -15,7 +15,9 @@
     </div>
 
     @if($user->id == Auth::id())
-        <a href="{{ action('UserController@edit', $user) }}" class="btn btn-primary">Change info</a>
+        <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+            <a href="{{ action('UserController@edit', $user) }}" class="btn btn-default">Change info</a>
+        </div>
     @endif
 
 @endsection
