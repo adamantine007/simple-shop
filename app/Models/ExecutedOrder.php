@@ -17,17 +17,17 @@ class ExecutedOrder extends Model {
 
     public function customer()
     {
-        return $this->belongsTo('App\Models\User', 'id', 'customer_id');
+        return $this->belongsTo('App\Models\User', 'customer_id', 'id');
     }
 
     public function seller()
     {
-        return $this->belongsTo('App\Models\User', 'id', 'seller_id');
+        return $this->belongsTo('App\Models\User', 'seller_id', 'id');
     }
 
     public function status()
     {
-        return $this->hasOne('App\Model\OrderStatus', 'id', 'status_id');
+        return $this->hasOne('App\Model\OrderStatus', 'status_id', 'id');
     }
 
 }

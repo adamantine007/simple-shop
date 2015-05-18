@@ -8,7 +8,7 @@ use SleepingOwl\Admin\Admin;
 Admin::menu()->label('Shop')->icon('fa-shopping-cart')->items(function()
 {
     Admin::menu('App\Models\Order')->icon('fa-list');
-    Admin::menu('App\Models\ExecutedOrder')->icon('fa-check-square-o');
+//    Admin::menu('App\Models\ExecutedOrder')->icon('fa-check-square-o');
     Admin::menu('App\Models\OrderStatus')->icon('fa-asterisk');
 });
 

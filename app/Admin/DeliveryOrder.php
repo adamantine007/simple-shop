@@ -1,5 +1,11 @@
 <?php
 
+use SleepingOwl\Admin\Admin;
+use SleepingOwl\Admin\Columns\Column;
+use SleepingOwl\Admin\Display\AdminDisplay;
+use SleepingOwl\Admin\Form\AdminForm;
+use SleepingOwl\Admin\FormItems\FormItem;
+
 Admin::model('App\Models\DeliveryOrder')->title('Delivery requests')->display(function ()
 {
 	$display = AdminDisplay::datatables();

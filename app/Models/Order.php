@@ -16,11 +16,11 @@ class Order extends Model {
 
     public function customer()
     {
-        return $this->belongsTo('App\Models\User', 'id', 'customer_id');
+        return $this->belongsTo('App\Models\User', 'customer_id', 'id');
     }
 
     public function status()
     {
-        return $this->hasOne('App\Model\OrderStatus', 'id', 'status_id');
+        return $this->hasOne('App\Models\OrderStatus', 'id', 'status_id');
     }
 }

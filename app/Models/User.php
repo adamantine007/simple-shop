@@ -67,6 +67,6 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 
     public function salary()
     {
-        return $this->belongsTo('App\Models\Salary', 'id', 'status');
+        return $this->belongsTo('App\Models\Salary', 'status', 'id');
     }
 }
