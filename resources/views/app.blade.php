@@ -45,6 +45,7 @@
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{ Auth::user()->name }} <span class="caret"></span></a>
 							<ul class="dropdown-menu" role="menu">
 								<li><a href="{{ url('/users/' . \Illuminate\Support\Facades\Auth::id()) }}">About me</a></li>
+								<li><a href="{{ url('/users/') }}">Users</a></li>
 								<li><a href="{{ url('/auth/logout') }}">Logout</a></li>
 							</ul>
 						</li>
@@ -54,7 +55,10 @@
 		</div>
 	</nav>
 
-	@yield('content')
+    <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+        @yield('content')
+    </div>
+
 
 	<!-- Scripts -->
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
