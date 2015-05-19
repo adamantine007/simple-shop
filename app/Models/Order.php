@@ -7,7 +7,7 @@ class Order extends Model {
     protected $table = 'orders';
 
     protected $fillable = [
-        'products',
+        'product_id',
         'address',
         'delivery_date',
         'status_id',
@@ -22,5 +22,10 @@ class Order extends Model {
     public function status()
     {
         return $this->hasOne('App\Models\OrderStatus', 'id', 'status_id');
+    }
+
+    public function product()
+    {
+        return $this->belongsTo('App\Models\Product');
     }
 }

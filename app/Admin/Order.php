@@ -22,7 +22,7 @@ Admin::model('App\Models\Order')->title('Orders')->display(function ()
             Column::string('customer.middle_name')->label('Customer middle name'),
             Column::string('customer.phone')->label('Phone'),
 
-            Column::string('product')->label('Product'),
+            Column::string('product.name')->label('Product'),
 
             Column::string('address')->label('Address'),
             Column::datetime('delivery_date')->label('Delivery date')->format('d.m.Y'),
@@ -49,7 +49,7 @@ Admin::model('App\Models\Order')->title('Orders')->display(function ()
 
                 FormItem::select('status_id', 'Status')->model('App\Models\OrderStatus')->display('name'),
 
-                FormItem::select('products', 'Products')->model('App\Models\Product')->display('name'),
+                FormItem::select('product_id', 'Product')->model('App\Models\Product')->display('name'),
 
                 FormItem::text('price', 'Price'),
             ]);

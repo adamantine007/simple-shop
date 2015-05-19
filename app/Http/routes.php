@@ -17,6 +17,7 @@ Route::get('home', 'HomeController@index');
 
 Route::resource('users', 'UserController');
 Route::resource('products', 'ProductController');
+Route::resource('orders', 'OrderController');
 
 
 Route::controllers([
