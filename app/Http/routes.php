@@ -19,6 +19,9 @@ Route::resource('users', 'UserController');
 Route::resource('products', 'ProductController');
 Route::resource('orders', 'OrderController');
 
+Route::get('search', 'SearchController@index');
+Route::post('search', 'SearchController@result');
+
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',

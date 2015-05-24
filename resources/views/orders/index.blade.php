@@ -4,7 +4,11 @@
 
     @if(count($orders))
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-            <p>Orders by {{ $orders[0]->customer->name }}</p>
+            <h2>Orders by {{ $orders[0]->customer->name }}</h2>
+        </div>
+
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <hr style="margin-top: 10px; width: 103%"/>
         </div>
 
         @foreach($orders as $order)
@@ -27,6 +31,10 @@
 
             <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
                 {{ $order->price }}
+            </div>
+
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <hr style="margin-top: 10px; width: 103%"/>
             </div>
 
         @endforeach
