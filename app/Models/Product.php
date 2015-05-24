@@ -28,7 +28,7 @@ class Product extends Model {
         return $this->hasMany('App\Models\Supply');
     }
 
-    public function order()
+    public function orders()
     {
         return $this->hasMany('App\Models\Order');
     }

@@ -33,3 +33,8 @@ Admin::menu()->label('Products')->icon('fa-thumbs-o-up')->items(function()
 //});
 
 Admin::menu('App\Models\User')->icon('fa-users');
+
+Admin::menu()->label('Summary')->icon('fa-list')->items(function() {
+    Admin::menu()->url('summary/products')->label('Products');
+    Admin::menu()->url('summary/users')->label('Users');
+});

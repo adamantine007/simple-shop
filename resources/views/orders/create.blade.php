@@ -20,15 +20,9 @@
 
             <!-- Address form field -->
             <div class="form-group">
-                {{--{!! Form::label('address', 'Address:') !!}--}}
                 {!! Form::text('address', null, ['class' => 'form-control']) !!}
             </div>
 
-            {{--<!-- Phone form field -->--}}
-            {{--<div class="form-group">--}}
-                {{--{!! Form::label('phone', 'Phone:') !!}--}}
-                {{--{!! Form::text('phone', null, ['class' => 'form-control']) !!}--}}
-            {{--</div>--}}
 
             <h1>Price: {{ $product->price }}</h1>
 
